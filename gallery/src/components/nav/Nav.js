@@ -1,11 +1,19 @@
 import "./Nav.css"
+import React from "react";
 
-function Nav() {
-    return(
-        <div className="nav-cont">
-
-        </div>
-    )
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <ul>
+        <li>
+          <a href="/">INICIO</a>
+        </li>
+        <li>
+          <a href="gallery">GALERIA</a>
+        </li>
+      </ul>
+    </nav>
+  );
 }
 
-export default Nav;
+export default Navbar;
