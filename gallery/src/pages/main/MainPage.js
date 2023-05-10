@@ -1,16 +1,18 @@
-import React from "react";
-import Nav from "../../components/nav/Nav";
+import image from "../../images/main-image.jpg"
+
 import "./MainPage.css";
 
 function MainPage() {
   return (
     <>
-      <Nav />
-      <div className="main-page-header">
-        <div className="main-page-header-overlay"></div>
-        <div className="main-page-title-container">
-          <h1 className="main-page-title">GALERIA DE ARTE</h1>
+      <div className="main-cont">
+
+        <div className="main-title-cont">
+          <h1 className="main-title marvio">GALERIA DE ARTE</h1>
         </div>
+        
+        <img src={image} className="main-image"></img>
+
       </div>
     </>
   );

@@ -1,0 +1,8 @@
+.photo-cont {
+    border-radius: 300px;
+
+    width: 100%;
+    aspect-ratio: 3/4;
+
+    object-fit: cover;
+}

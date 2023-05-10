@@ -1,0 +1,18 @@
+.artist-cont {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    margin-bottom: 40px
+}
+
+.artist-image {
+    border-radius: 50px;
+
+    width: 100px;
+    aspect-ratio: 2/1;
+}
+
+.artist-name {
+    font-size: 32px;
+}

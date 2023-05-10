@@ -1,17 +1,29 @@
+import { useNavigate } from "react-router-dom";
+
 import "./Nav.css"
-import React from "react";
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
   return (
-    <nav className="navbar">
-      <ul>
-        <li>
-          <a href="/">INICIO</a>
-        </li>
-        <li>
-          <a href="gallery">GALERIA</a>
-        </li>
-      </ul>
+    <nav className="nav">
+      <p 
+        className="nav-link marvio" 
+        onClick={() => {
+          navigate("inicio", {replace: true})
+        }}
+      >
+        Inicio
+      </p>
+      <p 
+        className="nav-link marvio" 
+        onClick={() => {
+          navigate("galeria", {replace: true})
+        }}
+      >
+        Galeria
+      </p>
     </nav>
   );
 }

@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Marvio";
+    src: 
+        local("MarvioFont"),
+        url("./fonts/Marvio.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Syne";
+    src: 
+        local("SyneBold"),
+        url("./fonts/SyneBold.ttf") format("truetype");
+}

@@ -1,78 +1,21 @@
-.gallery-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .gallery-title {
-    margin-top: 50px;
-    margin-left: 20px;
-  }
-  
-  .gallery-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .gallery-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .gallery-column {
-    flex: 20%;
-    max-width: 20%;
-    padding: 5px;
-  }
-  
-  .gallery-card {
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 40px;
-    height: 380px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-  }
-  
-  .gallery-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 40px;
+.gallery-header-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-  }
-  
-  .gallery-card-image {
-    background-color: #eee;
-    border-radius: 40px;
-    height: 0;
-    padding-bottom: 100%;
-  }
-  .gallery-card-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  .gallery-card-title {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .gallery-card-description {
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 16px;
-  }
-  
-  
+  margin-bottom: 40px;
+}
+
+.gallery-add-cont {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gallery-add-cont p {
+  cursor: pointer;
+}
+
+.gallery-subtitle {
+  margin: 40px 0;
+}
