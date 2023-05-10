@@ -11,7 +11,7 @@ function Navbar() {
       <p 
         className="nav-link marvio" 
         onClick={() => {
-          navigate("/Proyecto2023-Cabral-Mazzuchin/inicio", {replace: true})
+          navigate("inicio", {replace: true})
         }}
       >
         Inicio
@@ -19,7 +19,7 @@ function Navbar() {
       <p 
         className="nav-link marvio" 
         onClick={() => {
-          navigate("/Proyecto2023-Cabral-Mazzuchin/galeria", {replace: true})
+          navigate("galeria", {replace: true})
         }}
       >
         Galeria
