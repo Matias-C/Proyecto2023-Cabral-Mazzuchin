@@ -33,7 +33,7 @@ function App() {
         <BrowserRouter>
           <Nav />
           <Routes>
-            <Route exact path="/Proyecto2023-Cabral-Mazzuchin" element={<Navigate to="/Proyecto2023-Cabral-Mazzuchin/inicio" replace={true} />}  />
+            <Route exact path="/" element={<Navigate to="/Proyecto2023-Cabral-Mazzuchin/inicio" replace={true} />}  />
             <Route exact path="/Proyecto2023-Cabral-Mazzuchin/inicio" element={<MainPage />} />
             <Route exact path="/Proyecto2023-Cabral-Mazzuchin/galeria" element={<GalleryPage />} />
           </Routes>
