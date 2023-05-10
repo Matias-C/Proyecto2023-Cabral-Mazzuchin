@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/galeria/static/css/main.b79b1b65.css",
-    "main.js": "/galeria/static/js/main.0785e4ac.js",
-    "static/media/example-artist.jpg": "/galeria/static/media/example-artist.da7cc190c86947b04425.jpg",
-    "static/media/main-image.jpg": "/galeria/static/media/main-image.7dcd13241b9c78ebb158.jpg",
-    "static/media/SyneBold.ttf": "/galeria/static/media/SyneBold.2e6149cc8289991b6634.ttf",
-    "static/media/example-image.jpg": "/galeria/static/media/example-image.a7e4eafb818408be4789.jpg",
-    "static/media/Marvio.ttf": "/galeria/static/media/Marvio.17aadba24d3c6c912245.ttf",
-    "index.html": "/galeria/index.html",
-    "main.b79b1b65.css.map": "/galeria/static/css/main.b79b1b65.css.map",
-    "main.0785e4ac.js.map": "/galeria/static/js/main.0785e4ac.js.map"
+    "main.css": "/static/css/main.c2935840.css",
+    "main.js": "/static/js/main.9083a3f3.js",
+    "static/media/example-artist.jpg": "/static/media/example-artist.da7cc190c86947b04425.jpg",
+    "static/media/main-image.jpg": "/static/media/main-image.7dcd13241b9c78ebb158.jpg",
+    "static/media/SyneBold.ttf": "/static/media/SyneBold.2e6149cc8289991b6634.ttf",
+    "static/media/example-image.jpg": "/static/media/example-image.a7e4eafb818408be4789.jpg",
+    "static/media/Marvio.ttf": "/static/media/Marvio.17aadba24d3c6c912245.ttf",
+    "index.html": "/index.html",
+    "main.c2935840.css.map": "/static/css/main.c2935840.css.map",
+    "main.9083a3f3.js.map": "/static/js/main.9083a3f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.b79b1b65.css",
-    "static/js/main.0785e4ac.js"
+    "static/css/main.c2935840.css",
+    "static/js/main.9083a3f3.js"
   ]
 }
