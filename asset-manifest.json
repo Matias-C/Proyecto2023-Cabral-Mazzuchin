@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Proyecto2023-Cabral-Mazzuchin/static/css/main.4709f85b.css",
-    "main.js": "/Proyecto2023-Cabral-Mazzuchin/static/js/main.090c8900.js",
-    "static/media/example-artist.jpg": "/Proyecto2023-Cabral-Mazzuchin/static/media/example-artist.da7cc190c86947b04425.jpg",
-    "static/media/main-image.jpg": "/Proyecto2023-Cabral-Mazzuchin/static/media/main-image.7dcd13241b9c78ebb158.jpg",
-    "static/media/SyneBold.ttf": "/Proyecto2023-Cabral-Mazzuchin/static/media/SyneBold.2e6149cc8289991b6634.ttf",
-    "static/media/example-image.jpg": "/Proyecto2023-Cabral-Mazzuchin/static/media/example-image.a7e4eafb818408be4789.jpg",
-    "static/media/Marvio.ttf": "/Proyecto2023-Cabral-Mazzuchin/static/media/Marvio.17aadba24d3c6c912245.ttf",
-    "index.html": "/Proyecto2023-Cabral-Mazzuchin/index.html",
-    "main.4709f85b.css.map": "/Proyecto2023-Cabral-Mazzuchin/static/css/main.4709f85b.css.map",
-    "main.090c8900.js.map": "/Proyecto2023-Cabral-Mazzuchin/static/js/main.090c8900.js.map"
+    "main.css": "/inicio/static/css/main.9f3820d2.css",
+    "main.js": "/inicio/static/js/main.769d164e.js",
+    "static/media/example-artist.jpg": "/inicio/static/media/example-artist.da7cc190c86947b04425.jpg",
+    "static/media/main-image.jpg": "/inicio/static/media/main-image.7dcd13241b9c78ebb158.jpg",
+    "static/media/SyneBold.ttf": "/inicio/static/media/SyneBold.2e6149cc8289991b6634.ttf",
+    "static/media/example-image.jpg": "/inicio/static/media/example-image.a7e4eafb818408be4789.jpg",
+    "static/media/Marvio.ttf": "/inicio/static/media/Marvio.17aadba24d3c6c912245.ttf",
+    "index.html": "/inicio/index.html",
+    "main.9f3820d2.css.map": "/inicio/static/css/main.9f3820d2.css.map",
+    "main.769d164e.js.map": "/inicio/static/js/main.769d164e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4709f85b.css",
-    "static/js/main.090c8900.js"
+    "static/css/main.9f3820d2.css",
+    "static/js/main.769d164e.js"
   ]
 }
