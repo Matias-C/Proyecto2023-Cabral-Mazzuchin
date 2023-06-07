@@ -33,26 +33,6 @@ function GalleryPage() {
         getUserPiecesFromLocalStorage();
     }, [refresh]);
 
-    const saveUserPiecesInLocalStorage = () => {
-        const userPieces = [
-            {
-                photoId: 1,
-                photoUrl: img,
-            },
-            {
-                photoId: 2,
-                photoUrl: img,
-            },
-            {
-                photoId: 3,
-                photoUrl: img,
-            },
-        ];
-
-        localStorage.setItem("userPieces", JSON.stringify(userPieces));
-        setRefresh(true);
-    };
-
     return (
         <div className="gallery-cont">
             <div className="gallery-header-cont">
@@ -78,7 +58,7 @@ function GalleryPage() {
                     className="gallery-grid"
                 >
                     {userPieces.map((piece) => (
-                        <Photo key={piece.photoId} photo={piece.photoUrl} />
+                        <Photo key={piece.photoId} photo={img} />
                     ))}
                 </Grid>
             ) : (

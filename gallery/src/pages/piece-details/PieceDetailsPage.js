@@ -9,6 +9,8 @@ import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import BrushIcon from "@mui/icons-material/Brush";
 
+import img from "../../images/example-image.jpg";
+
 import "./PieceDetailsPage.css";
 
 function PieceDetailsPage() {
@@ -27,7 +29,6 @@ function PieceDetailsPage() {
     };
 
     const handleClick = () => {
-        // 👇️ open file input box on click of another element
         inputRef.current.click();
     };
 
@@ -37,7 +38,37 @@ function PieceDetailsPage() {
             return;
         }
         console.log(fileObj);
-        setPieceImage(fileObj)
+        setPieceImage(fileObj);
+    };
+
+    const getUserPiecesFromLocalStorage = () => {
+        // Función para cargar las obras ya guardadas
+        const userPieces = JSON.parse(localStorage.getItem("userPieces"));
+        if (userPieces === null) {
+            // Si el array es nullo se devuelve uno vacío
+            return [];
+        } else {
+            // Si es distinto de nullo, se devuelve el array cargado
+            return userPieces;
+        }
+    };
+
+    const saveUserPieceInLocalStorage = () => {
+        // Función para guardar una nueva obra
+        const userPieces = getUserPiecesFromLocalStorage(); // Se cargan las obras ya guardadas con la función getUserPiecesFromLocalStorage()
+        const newId = userPieces.length + 1; // Se crea un nuevo id en base al último del array de las obras
+
+        const newPiece = {
+            // Se crea la nueva obra para subir
+            pieceId: newId,
+            pieceImg: img,
+            pieceName: pieceName,
+            pieceDescription: pieceDescription,
+            pieceDate: document.getElementById("fecha").value,
+        };
+
+        userPieces.push(newPiece); // Se agrega a las obras anteriores
+        localStorage.setItem("userPieces", JSON.stringify(userPieces)); // Se guarda el nuevo array en localStorage
     };
 
     return (
@@ -106,6 +137,7 @@ function PieceDetailsPage() {
                             <Button
                                 variant="contained"
                                 disableElevation
+                                onClick={saveUserPieceInLocalStorage}
                                 className="form-button space-between"
                             >
                                 <h3 className="marvio">Guardar</h3>
