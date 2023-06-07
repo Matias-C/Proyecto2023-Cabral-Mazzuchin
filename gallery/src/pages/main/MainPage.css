@@ -31,6 +31,16 @@
 /* Responsive */
 
 
+@media screen and (max-width: 1366px) {
+    .main-title-cont {
+        margin-top: 50px;
+    }
+    .main-image {
+        height: 65%;
+        max-width: 400px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .main-title-cont {
         margin-top: 50px;

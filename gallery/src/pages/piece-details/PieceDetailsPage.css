@@ -49,7 +49,7 @@
     flex-direction: column;
     gap: 16px;
 
-    max-width: 600px;
+    max-width: 400px;
 }
 
 .form-input {
@@ -64,7 +64,7 @@
     border-radius: 40px !important;
 
     margin-left: 16px !important;
-    padding-right: 10px !important;
+    padding-right: 5px !important;
     width: 120%;
 }
 
@@ -74,7 +74,7 @@
     background-color: #fff;
     border-radius: 24px;
 
-    padding: 8px;
+    padding: 4px;
 }
 
 .form-button-icon {

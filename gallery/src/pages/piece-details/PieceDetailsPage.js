@@ -78,7 +78,7 @@ function PieceDetailsPage() {
                     <div className="form-file-input-cont">
                         <Fab
                             color="primary"
-                            size="medium"
+                            size="small"
                             onClick={handleClick}
                         >
                             <AddIcon />
@@ -98,7 +98,7 @@ function PieceDetailsPage() {
 
                     <div className="form-inputs-cont">
                         <h3 className="syne">Nombre de la obra</h3>
-                        <FormControl size="medium">
+                        <FormControl size="small">
                             <OutlinedInput
                                 id="nombre"
                                 value={pieceName}
@@ -112,7 +112,7 @@ function PieceDetailsPage() {
                             <h3 className="syne opacity">Opcional</h3>
                         </div>
 
-                        <FormControl size="medium" className="add-page-input">
+                        <FormControl size="small" className="add-page-input">
                             <OutlinedInput
                                 id="descripcion"
                                 value={pieceDescription}
@@ -126,7 +126,7 @@ function PieceDetailsPage() {
                         <h3 className="syne">Fecha</h3>
 
                         <div className="space-between">
-                            <FormControl variant="outlined" fullWidth>
+                            <FormControl variant="outlined" size="small" fullWidth>
                                 <OutlinedInput
                                     id="fecha"
                                     type="date"
@@ -136,6 +136,7 @@ function PieceDetailsPage() {
 
                             <Button
                                 variant="contained"
+                                size="small"
                                 disableElevation
                                 onClick={saveUserPieceInLocalStorage}
                                 className="form-button space-between"
