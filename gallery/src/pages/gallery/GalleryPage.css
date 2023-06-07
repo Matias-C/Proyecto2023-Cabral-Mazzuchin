@@ -1,21 +1,25 @@
-.gallery-header-cont {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.gallery-cont {
+    padding: 40px;
+}
 
-  margin-bottom: 40px;
+.gallery-header-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
 }
 
 .gallery-add-cont {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .gallery-add-cont p {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .gallery-subtitle {
-  margin: 40px 0;
+    margin: 40px 0;
 }

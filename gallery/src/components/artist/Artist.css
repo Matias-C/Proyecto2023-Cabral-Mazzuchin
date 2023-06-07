@@ -2,17 +2,17 @@
     display: flex;
     align-items: center;
     gap: 16px;
-
-    margin-bottom: 40px
 }
 
 .artist-image {
     border-radius: 50px;
 
-    width: 100px;
-    aspect-ratio: 2/1;
+    width: 80px;
+    aspect-ratio: 3/2;
+
+    object-fit: cover;
 }
 
 .artist-name {
-    font-size: 32px;
+    font-size: 38px;
 }

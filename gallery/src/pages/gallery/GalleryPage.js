@@ -1,70 +1,105 @@
-import Grid from '@mui/material/Unstable_Grid2';
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import PageContainer from "../../components/page-container/PageContainer";
+import Grid from "@mui/material/Unstable_Grid2";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+
 import Photo from "../../components/photo/Photo";
-import Artist from '../../components/artist/Artist';
+import Artist from "../../components/artist/Artist";
 
-import monnaLisa from "../../images/example-image.jpg"
-import daVinci from "../../images/example-artist.jpg"
+import img from "../../images/example-image.jpg";
+import artist from "../../images/example-artist.jpg";
 
 import "./GalleryPage.css";
 
 function GalleryPage() {
+    const navigate = useNavigate();
 
-  return (
-    <PageContainer>
-      <div className="gallery-header-cont">
+    const [userPieces, setUserPieces] = useState([]);
+    const [refresh, setRefresh] = useState(false);
 
-        <h2 className="marvio">Mi Galeria</h2>
-        
-        <div className="gallery-add-cont">
-          <p className="syne">Mostrar más</p>
-          
-          <Fab color="primary" size="medium">
-            <AddIcon />
-          </Fab>
+    useEffect(() => {
+        // Función que se ejecuta cada vez que se entra a la galería
+        const getUserPiecesFromLocalStorage = async () => {
+            // La función trae todas las piezas que se hayan guardado en Local Storage
+            const userPieces = await JSON.parse(
+                localStorage.getItem("userPieces"),
+            ); // Se transforma en objeto
+            setUserPieces(userPieces); // Se guarda en userPieces
+            setRefresh(false);
+            console.log("hola");
+        };
+        getUserPiecesFromLocalStorage();
+    }, [refresh]);
+
+    const saveUserPiecesInLocalStorage = () => {
+        const userPieces = [
+            {
+                photoId: 1,
+                photoUrl: img,
+            },
+            {
+                photoId: 2,
+                photoUrl: img,
+            },
+            {
+                photoId: 3,
+                photoUrl: img,
+            },
+        ];
+
+        localStorage.setItem("userPieces", JSON.stringify(userPieces));
+        setRefresh(true);
+    };
+
+    return (
+        <div className="gallery-cont">
+            <div className="gallery-header-cont">
+                <h2 className="marvio">Mi Galería</h2>
+
+                <div className="gallery-add-cont">
+                    <p className="syne">Mostrar más</p>
+
+                    <Fab
+                        color="primary"
+                        size="medium"
+                        onClick={() => navigate("subir-obra")}
+                    >
+                        <AddIcon />
+                    </Fab>
+                </div>
+            </div>
+
+            {userPieces ? (
+                <Grid
+                    container
+                    spacing={{ sm: 6, md: 6, lg: 8, xl: 8 }}
+                    className="gallery-grid"
+                >
+                    {userPieces.map((piece) => (
+                        <Photo key={piece.photoId} photo={piece.photoUrl} />
+                    ))}
+                </Grid>
+            ) : (
+                <p className="syne">Aun no tines obras, sube la primera!</p>
+            )}
+
+            <h2 className="gallery-subtitle marvio">Otros artistas</h2>
+
+            <Artist artistImage={artist} artistName="Leonardo da Vinci" />
+
+            <Grid
+                container
+                spacing={{ sm: 6, md: 6, lg: 8, xl: 8 }}
+                className="gallery-grid"
+            >
+                <Photo photo={img} />
+                <Photo photo={img} />
+                <Photo photo={img} />
+            </Grid>
         </div>
-        
-      </div>
-
-      <Grid container spacing={{ sm: 6, md: 6, lg: 8, xl: 8 }} className="gallery-grid">
-        
-        <Photo 
-          photo={monnaLisa}
-        />
-        <Photo 
-          photo={monnaLisa}
-        />
-        <Photo 
-          photo={monnaLisa}
-        />
-
-      </Grid>
-
-      <h2 className="gallery-subtitle marvio">Otros artistas</h2>
-
-      <Artist
-        artistImage={daVinci}
-        artistName="Leonardo da Vinci"
-      />
-
-      <Grid container spacing={{ sm: 6, md: 6, lg: 8, xl: 8 }} className="gallery-grid">
-        
-        <Photo 
-          photo={monnaLisa}
-        />
-        <Photo 
-          photo={monnaLisa}
-        />
-        <Photo 
-          photo={monnaLisa}
-        />
-        
-      </Grid>
-    </PageContainer>
-  );
+    );
 }
 
 export default GalleryPage;

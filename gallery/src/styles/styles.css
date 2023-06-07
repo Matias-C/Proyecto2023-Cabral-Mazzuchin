@@ -7,11 +7,15 @@ h1, h2, h3, p {
 }
 
 h1 {
-    font-size: 180px;
+    font-size: 220px;
 }
 
 h2 {
     font-size: 64px;
+}
+
+h3 {
+    font-size: 24px;
 }
 
 p {
@@ -24,6 +28,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+
+    overflow-x: hidden;
 }
 
 
@@ -36,7 +42,16 @@ html, body {
 }
 
 .syne {
-    font-family: "Syne";
+    font-family: "Syne" !important;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.opacity {
+    opacity: 50%;
 }
 
 
@@ -45,4 +60,14 @@ html, body {
 
 ::-webkit-scrollbar {
     display: none;
+}
+
+
+/* Responsive */
+
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 120px;
+    }
 }

@@ -1,11 +1,19 @@
-import Grid from '@mui/material/Unstable_Grid2';
+import { useNavigate } from "react-router-dom";
 
-import "./Photo.css"
+import Grid from "@mui/material/Unstable_Grid2";
+
+import "./Photo.css";
 
 function Photo(props) {
-    return(
+
+    const navigate = useNavigate();
+
+    return (
         <Grid xs={12} sm={6} md={4} lg={3} xl={2}>
-            <img className="photo-cont" src={props.photo} />
+            <div className="photo-cont">
+                <div className="photo-blur-effect"></div>
+                <img className="photo" src={props.photo} alt="gallery-image" />
+            </div>
         </Grid>
     );
 }

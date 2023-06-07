@@ -1,11 +1,16 @@
 import React from "react";
-import "./PageContainer.css"
+import { Outlet } from "react-router-dom";
 
-function PageContainer({ children }) {
+import Navbar from "../nav/Nav";
+
+function PageContainer() {
     return(
-        <div className="page-cont">
-            {children}
-        </div>
+        <>
+            <Navbar />
+            <div className="page-cont">
+                <Outlet />
+            </div>
+        </>
     );
 }
 
