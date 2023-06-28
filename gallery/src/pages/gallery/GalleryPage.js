@@ -28,7 +28,7 @@ function GalleryPage() {
             ); // Se transforma en objeto
             setUserPieces(userPieces); // Se guarda en userPieces
             setRefresh(false);
-            console.log("hola");
+            console.log(userPieces);
         };
         getUserPiecesFromLocalStorage();
     }, [refresh]);
@@ -58,7 +58,11 @@ function GalleryPage() {
                     className="gallery-grid"
                 >
                     {userPieces.map((piece) => (
-                        <Photo key={piece.photoId} photo={img} />
+                        <Photo
+                            key={piece.pieceId}
+                            photo={img}
+                            piece={piece}
+                        />
                     ))}
                 </Grid>
             ) : (

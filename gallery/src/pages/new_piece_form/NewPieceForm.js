@@ -1,39 +1,48 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
 import Button from "@mui/material/Button";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
 import BrushIcon from "@mui/icons-material/Brush";
 
-import img from "../../images/example-image.jpg";
+import "./NewPieceForm.css";
 
-import "./PieceDetailsPage.css";
-
-function PieceDetailsPage() {
+function NewPieceForm() {
     const inputRef = useRef(null);
+    const navigate = useNavigate();
 
     const [pieceName, setPieceName] = useState("");
     const [pieceDescription, setPieceDescription] = useState("");
+    const [pieceDate, setPieceDate] = useState("");
     const [pieceImage, setPieceImage] = useState();
 
     const handlePieceNameChange = (e) => {
-        setPieceName(e.target.value);
+        const newValue = e.target.value;
+        setPieceName(newValue);
     };
 
     const handlePieceDescriptionChange = (e) => {
-        setPieceDescription(e.target.value);
+        const newValue = e.target.value;
+        setPieceDescription(newValue);
+    };
+
+    const handlePieceDateChange = (e) => {
+        const newValue = e.target.value;
+        setPieceDate(newValue);
     };
 
     const handleClick = () => {
         inputRef.current.click();
     };
 
-    const handleFileChange = (event) => {
-        const fileObj = event.target.files && event.target.files[0];
+    const handleFileChange = (e) => {
+        const fileObj = e.target.files && e.target.files[0];
         if (!fileObj) {
             return;
         }
@@ -61,14 +70,16 @@ function PieceDetailsPage() {
         const newPiece = {
             // Se crea la nueva obra para subir
             pieceId: newId,
-            pieceImg: img,
+            pieceImg: pieceImage,
             pieceName: pieceName,
             pieceDescription: pieceDescription,
-            pieceDate: document.getElementById("fecha").value,
+            pieceDate: pieceDate,
         };
 
         userPieces.push(newPiece); // Se agrega a las obras anteriores
         localStorage.setItem("userPieces", JSON.stringify(userPieces)); // Se guarda el nuevo array en localStorage
+
+        navigate(-1); // Se vuelve hacia la galería
     };
 
     return (
@@ -76,11 +87,7 @@ function PieceDetailsPage() {
             <Grid container spacing={4} className="form-cont">
                 <Grid xs={12} sm={12} md={6} lg={6} className="form-file-cont">
                     <div className="form-file-input-cont">
-                        <Fab
-                            color="primary"
-                            size="small"
-                            onClick={handleClick}
-                        >
+                        <Fab color="primary" size="small" onClick={handleClick}>
                             <AddIcon />
                         </Fab>
                         <input
@@ -98,11 +105,15 @@ function PieceDetailsPage() {
 
                     <div className="form-inputs-cont">
                         <h3 className="syne">Nombre de la obra</h3>
-                        <FormControl size="small">
+                        <FormControl
+                            size="small"
+                            fullWidth
+                        >
                             <OutlinedInput
-                                id="nombre"
+                                id="piece-name-input"
                                 value={pieceName}
                                 onChange={handlePieceNameChange}
+                                autoFocus
                                 className="form-input"
                             />
                         </FormControl>
@@ -112,9 +123,9 @@ function PieceDetailsPage() {
                             <h3 className="syne opacity">Opcional</h3>
                         </div>
 
-                        <FormControl size="small" className="add-page-input">
+                        <FormControl size="small" fullWidth>
                             <OutlinedInput
-                                id="descripcion"
+                                id="piece-description-input"
                                 value={pieceDescription}
                                 multiline
                                 rows={4}
@@ -126,22 +137,28 @@ function PieceDetailsPage() {
                         <h3 className="syne">Fecha</h3>
 
                         <div className="space-between">
-                            <FormControl variant="outlined" size="small" fullWidth>
+                            <FormControl
+                                size="small"
+                                fullWidth
+                            >
                                 <OutlinedInput
                                     id="fecha"
                                     type="date"
+                                    value={pieceDate}
+                                    onChange={handlePieceDateChange}
                                     className="form-input syne"
                                 />
                             </FormControl>
 
                             <Button
+                                disabled={pieceName !== "" && pieceDate !== "" && pieceImage !== null ? false : true}
                                 variant="contained"
                                 size="small"
                                 disableElevation
                                 onClick={saveUserPieceInLocalStorage}
                                 className="form-button space-between"
                             >
-                                <h3 className="marvio">Guardar</h3>
+                                <p className="marvio">Guardar</p>
                                 <div className="form-button-bg-icon">
                                     <BrushIcon className="form-button-icon" />
                                 </div>
@@ -154,4 +171,4 @@ function PieceDetailsPage() {
     );
 }
 
-export default PieceDetailsPage;
+export default NewPieceForm;
